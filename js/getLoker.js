@@ -47,9 +47,6 @@ const showLokers = () => {
                         </div>
                         <div class="modal-body mx-auto" id="qrcode${counter}">
                         </div>
-                        <div class="modal-body mx-auto" style="font-size:2rem">
-                        Screenshot this QR to unlock the locker later
-                        </div>
                         <div class="modal-footer">
                           <button type="button" style="min-width: 15rem; font-size: large;" id="select${counter}" class="btn btn-primary">Understood</button>
                         </div>
@@ -74,7 +71,7 @@ const showLokers = () => {
                   <button type="button" class="btn btn-outline-danger d-none" style="min-width: 15rem; font-size: large;" id="done${counter}">
                     Selesai
                   </button>
-      
+            
                   <!-- Modal -->
                   <div class="modal fade" id="staticBackdrop${counter}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
@@ -84,9 +81,6 @@ const showLokers = () => {
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body mx-auto" id="qrcode${counter}">
-                        </div>
-                        <div class="modal-body mx-auto" style="font-size:2rem">
-                        Screenshot this QR to unlock the locker later
                         </div>
                         <div class="modal-footer">
                           <button type="button" style="min-width: 15rem; font-size: large;" id="select${counter}" class="btn btn-primary">Understood</button>
@@ -123,9 +117,6 @@ const showLokers = () => {
                         </div>
                         <div class="modal-body mx-auto" id="qrcode${counter}">
                         </div>
-                        <div class="modal-body mx-auto" style="font-size:2rem">
-                        Screenshot this QR to unlock the locker later
-                        </div>
                         <div class="modal-footer">
                           <button type="button" style="min-width: 15rem; font-size: large;" id="select${counter}" class="btn btn-primary">Understood</button>
                         </div>
@@ -158,9 +149,6 @@ const showLokers = () => {
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body mx-auto" id="qrcode${counter}">
-                      </div>
-                      <div class="modal-body mx-auto" style="font-size:2rem">
-                      Screenshot this QR to unlock the locker later
                       </div>
                       <div class="modal-footer">
                         <button type="button" style="min-width: 15rem; font-size: large;" id="select${counter}" class="btn btn-primary">Understood</button>
