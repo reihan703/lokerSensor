@@ -69,6 +69,11 @@
     <!-- APPEARS WHEN THE USER IS LOGGED IN -->
     <div class="loggedin d-none" id="loggedin">
       <h3 id="userDisplay">User</h3>
+      <div class="userQrs mx-auto d-flex flex-column justify-content-center">
+        <div id="qr" class="text-center mx-auto mt-1">
+          
+        </div>
+      </div>
       <a class="btn btn-outline-danger btn-sm "  href="#" role="button" id="signout" style="min-width: 15rem; font-size: large;">Sign out </a>
     </div>
     
@@ -107,16 +112,20 @@
     signin()
   </script>
 
-  <!-- SHOW SIGN OUT BUTTON ON LOGGED IN -->
+  <!-- IF USER -->
   <script type="module">
     import { auth, onAuthStateChanged } from "./js/config.js "; 
+    import {useGetQr} from './js/getQr.js'
     onAuthStateChanged(auth, (user) => { 
-      if (user != null) {
+      if (user) {
         document.getElementById('loggedin').classList.remove('d-none')
         document.getElementById('login-form').classList.add('d-none')
         document.getElementById('buttons').classList.add('d-none')
         document.getElementById('userDisplay').innerHTML = "Hello, " + user.displayName
+        const {getQr} = useGetQr()
+        getQr()
       }
+      
     });
   </script>
 
@@ -126,5 +135,35 @@
     const {showLokers} = useShowLokers()
     showLokers()
   </script>
+
+  <!-- <script type="text/javascript">
+    function generateQRCode() {
+      //Can change 7 to 2 for longer results.
+      let r = (Math.random() + 1).toString(36).substring(4);
+      console.log(r)
+      // let website = document.getElementById("website").value;
+      
+      if (r) {
+        // let qrcodeContainer = document.getElementById("qrcode");
+        // qrcodeContainer.innerHTML = "";
+        // new QRCode(qrcodeContainer, r);
+        /*With some styles*/
+        let qrcodeContainer2 = document.getElementById("userQr");
+        qrcodeContainer2.innerHTML = "";
+        new QRCode(qrcodeContainer2, {
+          text: r,
+          width: 128,
+          height: 128,
+          colorDark: "#5868bf",
+          colorLight: "#ffffff",
+          correctLevel: QRCode.CorrectLevel.H
+        });
+      } else {
+        alert("Please enter a valid URL");
+      }
+    }
+
+    window.onload = generateQRCode()
+  </script> -->
 </body>
 </html>
